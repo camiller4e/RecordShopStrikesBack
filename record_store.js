@@ -32,11 +32,6 @@ RecordStore.prototype.searchByGenre = function (genre) {
   return _.filter(this.inventory, record => record.genre === genre)
 };
 
-// Bank.prototype.findBy = function(parameter, criteria){
-//   return this.accounts.filter(function(account){
-//     return account[parameter] === criteria;
-//   })
-// };
 
 
 module.exports = RecordStore;

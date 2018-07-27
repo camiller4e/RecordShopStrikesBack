@@ -6,7 +6,7 @@ describe("RecordStore", function(){
   let recordStore, record1, record2, record3;
 
   beforeEach(function(){
-    recordStore = new RecordStore("Stevie's Good Records", "Glasgow")
+    recordStore = new RecordStore("Stevie's Good Records", "Glasgow");
     record1 = new Record("Chance the Rapper", "Acid Rap", "Hip-Hop", 10);
     record2 = new Record("TWICE", "#TWICE", "K-Pop", 20);
     record3 = new Record("Vulfpeck", "Mr. Finish Line", "Funk/Soul", 12);
