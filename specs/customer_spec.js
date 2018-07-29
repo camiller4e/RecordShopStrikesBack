@@ -63,7 +63,7 @@ describe("Customer", function(){
 
   it("should be able to view the total value of their collection", function(){
     curlyboy.recordCollection = [record1, record2, record3];
-    const expected = "Total Value: £42"
+    const expected = 42;
     const actual = curlyboy.totalValue();
     assert.deepStrictEqual(expected, actual);
   })
@@ -82,7 +82,7 @@ describe("Customer", function(){
     assert.deepStrictEqual(expected, actual);
   })
 
-  it("should be able to sort their records by value", function(){
+  it("should be able to sort their records by value in ascending order", function(){
     curlyboy.recordCollection = [record1, record2, record3, record4];
     const expected = [record4, record1, record3, record2];
     const actual = curlyboy.sortRecordsByValue("price");
@@ -93,6 +93,14 @@ describe("Customer", function(){
     curlyboy.recordCollection = [record1, record2, record3, record4];
     const expected = [record2, record3, record1, record4];
     const actual = curlyboy.sortRecordsByValue("price").reverse();
+    assert.deepStrictEqual(expected, actual);
+  })
+
+  it("should be able to compare the value of their collection with another RecordCollector", function(){
+    curlyboy.recordCollection = [record1, record2, record3];
+    bobby.recordCollection = [record4];
+    const expected = "Your collection is worth £42 and their collection is worth £8"
+    const actual = curlyboy.compareCollection(bobby);
     assert.deepStrictEqual(expected, actual);
   })
 

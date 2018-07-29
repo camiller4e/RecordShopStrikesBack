@@ -20,9 +20,7 @@ Customer.prototype.sellRecord = function (record) {
 };
 
 Customer.prototype.totalValue = function () {
-  let recordValue = _.reduce(this.recordCollection, (accumulator, record) => accumulator += record.price, 0)
-
-  return "Total Value: £" + recordValue;
+  return _.reduce(this.recordCollection, (accumulator, record) => accumulator += record.price, 0)
 };
 
 Customer.prototype.getValueByGenre = function (genre) {
@@ -36,6 +34,10 @@ Customer.prototype.mostValuableRecord = function () {
 
 Customer.prototype.sortRecordsByValue = function (property) {
   return _.sortBy(this.recordCollection, property)
+};
+
+Customer.prototype.compareCollection = function (customer) {
+  return "Your collection is worth £" + this.totalValue() + " and their collection is worth £" + customer.totalValue(); + "."
 };
 
 
