@@ -50,7 +50,7 @@ describe("RecordStore", function(){
     assert.deepStrictEqual(expected2, actual2);
   })
 
-  it("should be able to show current balance and vale of unsold records", function(){
+  it("should be able to show current balance and value of unsold records", function(){
     recordStore.sell(record1);
     const expected = "Balance: £10, Stock Value: £32"
     const actual = recordStore.report();
